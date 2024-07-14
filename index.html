@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador de texto</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="C:\Users\carlo\Desktop\Formação One_Alura\Desafio 1\encriptador.js"></script>
+    <script>
+        // Função JavaScript para criptografar o texto
+        function criptografarTexto() {
+            let texto = document.getElementById('inputTexto').value;
+            let textoCriptografado = criptografarTextoFuncao(texto); // Chamando função de encriptação definida no encriptador.js
+            document.getElementById('textoExibido').value = textoCriptografado;
+            document.getElementById('inputTexto').value = ''; // Limpar a caixa de entrada após criptografar
+        }
+
+        // Função JavaScript para descriptografar o texto
+        function descriptografarTexto() {
+            let texto = document.getElementById('inputTexto').value;
+            let textoDescriptografado = descriptografarTextoFuncao(texto); // Chamando função de desencriptação definida no encriptador.js
+            document.getElementById('textoExibido').value = textoDescriptografado;
+            document.getElementById('inputTexto').value = ''; // Limpar a caixa de exibição após descriptografar
+        }
+
+        // Função JavaScript para copiar o texto exibido
+        function copiarTexto() {
+            let textoExibido = document.getElementById('textoExibido');
+            textoExibido.select();
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Decodificador de Texto</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left-side">
+                <label for="inputTexto">Digite seu texto:</label><br>
+                <textarea id="inputTexto" name="inputTexto" rows="8" placeholder="Digite seu texto aqui..."></textarea><br><br>
+                
+                <!-- Botões para Criptografar e Descriptografar -->
+                <button onclick="criptografarTexto()">Criptografar</button>
+                <button onclick="descriptografarTexto()">Descriptografar</button><br><br>
+            </div>
+
+            <div class="right-side">
+                <!-- Caixa de texto para exibir o texto processado -->
+                <label for="textoExibido">Texto criptografado/descriptografado:</label><br>
+                <textarea id="textoExibido" name="textoExibido" rows="8" readonly placeholder="Texto criptografado/descriptografado..."></textarea><br><br>
+
+                <!-- Botão para copiar o texto exibido -->
+                <button onclick="copiarTexto()">Copiar Texto</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Página criada por Weyder</p>
+        <p>e-mail: carlos.weyder@hotmail.com</p>
+    </footer>
+</body>
+</html>

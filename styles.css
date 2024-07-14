@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #030c2c;
+}
+
+body {
+    background: #030c2c;
+    min-height: 100vh; /* Evita que o conteúdo fique maior que a viewport */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    justify-content: space-between; /* Distribui o conteúdo entre o topo e o rodapé */
+}
+
+header, footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: #1875E8;
+    color: white;
+}
+
+main {
+    flex: 1; /* Ocupa o espaço restante entre header e footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto; /* Centraliza horizontalmente */
+    display: flex;
+    border-radius: 12px;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    overflow: hidden; /* Evita que os elementos filhos ultrapassem o contêiner */
+}
+
+.left-side, .right-side {
+    padding: 1rem;
+    flex: 1; /* Ocupa a largura total do espaço disponível */
+}
+
+.left-side {
+    border-right: 2px solid transparent; /* Linha separadora transparente à direita */
+}
+
+textarea {
+    width: 100%;
+    resize: none; /* Impede o redimensionamento do textarea pelo usuário */
+    border: none; /* Remove a borda padrão */
+    background-color: #f0f0f0; /* Cor de fundo */
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+textarea[readonly] {
+    background-color: #ffffff; /* Cor de fundo para readonly */
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #1875E8;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #1354A5;
+}
+
+button:active {
+    transform: translateY(1px);
+}
